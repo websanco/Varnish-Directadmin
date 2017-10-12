@@ -50,7 +50,8 @@ cp -p  /usr/local/directadmin/data/templates/redirect_virtual_host.conf  /usr/lo
 cd /usr/local/directadmin/data/templates/custom
 sed -i 's/<VirtualHost |IP|:|PORT_80| |MULTI_IP|>/<VirtualHost 127.0.0.1:8080 |IP|:8080 |MULTI_IP|>/g' *
 cd
-wget http://www.stderr.net/apache/rpaf/download/mod_rpaf-0.6.tar.gz
+#wget http://www.stderr.net/apache/rpaf/download/mod_rpaf-0.6.tar.gz
+wget http://drupion.com/sites/default/files/mod_rpaf-0.6.tar_.gz
 tar xzf mod_rpaf-0.6.tar.gz
 cd mod_rpaf-0.6
 apxs -cia mod_rpaf-2.0.c
