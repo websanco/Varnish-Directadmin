@@ -45,10 +45,18 @@ cd /usr/local/directadmin/data/templates/custom
 sed -i "s/<VirtualHost |IP|:|PORT_80| |MULTI_IP|>/<VirtualHost 127.0.0.1:8080 |IP|:8080 |MULTI_IP|>/g" *
 cd
 #wget http://www.stderr.net/apache/rpaf/download/mod_rpaf-0.6.tar.gz
-wget http://drupion.com/sites/default/files/mod_rpaf-0.6.tar_.gz
-tar xzf mod_rpaf-0.6.tar.gz
-cd mod_rpaf-0.6
-apxs -cia mod_rpaf-2.0.c
+#wget http://drupion.com/sites/default/files/mod_rpaf-0.6.tar_.gz
+#tar xzf mod_rpaf-0.6.tar.gz
+#cd mod_rpaf-0.6
+#apxs -cia mod_rpaf-2.0.c
+
+cd /usr/local/src
+wget https://github.com/websanco/Varnish-Directadmin/raw/master/mod_rpaf-master.zip
+unzip master.zip
+cd mod_rpaf-master
+/bin/sed -i "s/remote_/client_/g" mod_rpaf-2.0.c
+make && make install
+
 cd
 ip=$(( lynx --dump cpanel.net/showip.cgi ) 2>&1 | sed "s/ //g")
 echo "<IfModule mod_rpaf-2.0.c>
