@@ -4,7 +4,7 @@
 ### Build by Jazz1611 ###
 
 #Clear Screen For Install
-clear
+#clear
 
 echo -e "$GREEN----------------------------------------$RESET"
 echo -e "  $RED Varnish Cache (Ver 4.x) for Directadmin $RESET"
