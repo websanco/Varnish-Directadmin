@@ -2,7 +2,7 @@
 
 # This is scripts install Varnish Cache for Directadmin.
 ### Build by Jazz1611 ###
-
+#ok
 RED="\033[01;31m"
 GREEN="\033[01;32m"
 RESET="\033[0m"
